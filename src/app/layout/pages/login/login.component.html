@@ -1,0 +1,41 @@
+<div class="container my-4 mx-auto">
+    <h3>Login Now:</h3>
+    @if (errorMessage) {
+    <h3 class="alert alert-danger">{{errorMessage}}</h3>
+
+    }
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+        <div class="my-3">
+            <label for="email">Email:</label>
+            <input id="email" class="form-control mt-2" type="email" formControlName="email"
+                placeholder="Enter Your Email.">
+            @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+            <div class="mt-1 alert alert-danger">
+                @if (loginForm.get('email')?.errors?.['required']) {
+                <p class="m-0">Email is Required</p>
+                }@else if (loginForm.get('email')?.errors?.['email']) {
+                <p class="m-0">Email is Not-valid.</p>
+                }
+            </div>
+            }
+        </div>
+        <div class="my-3">
+            <label for="password">Password:</label>
+            <input id="password" class="form-control mt-2" type="password" formControlName="password"
+                placeholder="Enter Your Password.">
+            @if (loginForm.get('password')?.errors && loginForm.get('password')?.touched) {
+            <div class="mt-1 alert alert-danger">
+                @if (loginForm.get('password')?.errors?.['required']) {
+                <p class="m-0">Password is Required</p>
+                }@else if (loginForm.get('password')?.errors?.['pattern']) {
+                <p class="m-0">Password is Not-valid.</p>
+                <p class="m-0">Password must be minimum 8 characters, at least one uppercase letter, one lowercase
+                    letter and one number</p>
+                }
+            </div>
+            }
+        </div>
+        <button [disabled]="loginForm.invalid" class="btn btn-main text-white d-block mx-auto" type="submit">Register
+            @if (isLoading) {<i class="fa-solid fa-spinner fa-spin"></i>}</button>
+    </form>
+</div>
