@@ -36,7 +36,6 @@ export class RegisterComponent {
     this.isLoading = true;
     this._AuthService.sendRegister(this.registerForm.value).subscribe({
       next: (res) => {
-        console.log(res);
         this.errorMessage = '';
         this.isLoading = false;
         this._Router.navigate(['/login']);

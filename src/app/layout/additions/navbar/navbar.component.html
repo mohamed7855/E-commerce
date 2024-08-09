@@ -10,7 +10,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link rounded-pill" routerLink="home" routerLinkActive="bg-main text-white">Home</a>                
+                @if (isLogin) {
+                <a class="nav-link rounded-pill" routerLink="home" routerLinkActive="bg-main text-white">Home</a>
+                }
             </div>
             <div class="socialmedia d-flex gap-3 align-items-center">
                 <i class="fa-brands fa-facebook"></i>
@@ -18,9 +20,13 @@
                 <i class="fa-brands fa-youtube"></i>
                 <i class="fa-brands fa-linkedin"></i>
                 <i class="fa-brands fa-x-twitter"></i>
+                @if (isLogin) {
+                <a class="nav-link rounded-pill p-2" routerLinkActive="bg-main text-white" (click)="logoutSubmit()">Logout</a>
+                }@else {
                 <a class="nav-link rounded-pill p-2" routerLink="login" routerLinkActive="bg-main text-white">Login</a>
-                <a class="nav-link rounded-pill p-2" routerLink="register" routerLinkActive="bg-main text-white">Register</a>
-                <a class="nav-link rounded-pill p-2" routerLinkActive="bg-main text-white">Logout</a>
+                <a class="nav-link rounded-pill p-2" routerLink="register"
+                    routerLinkActive="bg-main text-white">Register</a>
+                }
             </div>
         </div>
 

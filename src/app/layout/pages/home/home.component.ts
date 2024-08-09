@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  constructor(@Inject(PLATFORM_ID) private platformId:Object) {  }
+  ngOnInit(): void {
+    if(isPlatformBrowser(this.platformId)){
+      localStorage.setItem('currentPage', '/home')
+    }
+  }
 
 }

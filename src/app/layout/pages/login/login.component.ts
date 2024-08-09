@@ -29,8 +29,9 @@ export class LoginComponent {
     this.isLoading = true;
     this._AuthService.sendLogin(this.loginForm.value).subscribe({
       next: (res) => {
-        console.log(res);
         this.errorMessage = '';
+        localStorage.setItem('userToken', res.token);
+        this._AuthService.getUserData()
         this.isLoading = false;
         this._Router.navigate(['/home']);
       },
