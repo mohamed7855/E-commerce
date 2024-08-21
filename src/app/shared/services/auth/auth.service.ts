@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Login, Register } from '../../interfaces/register';
 import { env } from '../../../Base/Environment';
@@ -34,5 +34,18 @@ export class AuthService {
 
   getUserData() {
     this.userData.next(jwtDecode(JSON.stringify(localStorage.getItem('userToken'))));
+  }
+
+  // Forget Password
+  verifyEmail(data: any): Observable<any> {
+    return this._HttpClient.post(`${env.baseUrl}/api/v1/auth/forgotPasswords`, data)
+  }
+
+  verifyResetCode(data: any): Observable<any> {
+    return this._HttpClient.post(`${env.baseUrl}/api/v1/auth/verifyResetCode`, data)
+  }
+
+  resetPassword(data: any): Observable<any> {
+    return this._HttpClient.put(`${env.baseUrl}/api/v1/auth/resetPassword`, data)
   }
 }

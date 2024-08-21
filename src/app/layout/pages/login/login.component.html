@@ -35,7 +35,10 @@
             </div>
             }
         </div>
-        <button [disabled]="loginForm.invalid" class="btn btn-main text-white d-block mx-auto" type="submit">Login
-            @if (isLoading) {<i class="fa-solid fa-spinner fa-spin"></i>}</button>
+        <div class="d-flex justify-content-end gap-3 align-items-center">
+            <a class="text-decoration-none" routerLink="/forgetPassword">Forget Password</a>
+            <button [disabled]="loginForm.invalid" class="btn btn-main text-white" type="submit">Login
+                @if (isLoading) {<i class="fa-solid fa-spinner fa-spin"></i>}</button>
+        </div>
     </form>
 </div>
