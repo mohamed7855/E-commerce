@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="container my-5">
+    <div class="row g-4">
+        @for (product of allProducts; track $index) {
+        <div class="col-md-3">
+            <div class="card">
+                <div [routerLink]="['/productDetails', product._id]">
+                    <img [src]="product.imageCover" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-main">{{product.category.name}}</h5>
+                        <p class="card-text">{{product.price}}EGP</p>
+                        <p class="card-text">{{product.ratingsAverage}}</p>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent pt-0 border-0" routerLink="/jjjjj">
+                    <a class="btn btn-success">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
