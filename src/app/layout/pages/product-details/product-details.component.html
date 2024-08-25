@@ -2,7 +2,13 @@
     <div class="row">
         @if (product) {
         <div class="col-md-4">
-            <img [src]="product.imageCover" class="w-100" alt="">
+            <owl-carousel-o [options]="customOptions">
+                @for (image of product.images; track $index) {
+                <ng-template carouselSlide>
+                    <img [src]="image" class="w-100">
+                </ng-template>
+                }
+            </owl-carousel-o>
         </div>
         <div class="col-md-8">
             <h4 class="card-text">{{product.title}}</h4>
