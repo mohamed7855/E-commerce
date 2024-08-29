@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" routerLink="">
+        <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
             <i class="fa-solid fa-cart-shopping nav-icon text-main"></i>
             <span class="h3 bold mb-0">Fresh Cart</span>
         </a>
@@ -11,8 +11,9 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 @if (isLogin) {
-                <a class="nav-link rounded-pill" routerLink="home" routerLinkActive="bg-main text-white">Home</a>
-                }
+                <a class="nav-link rounded-pill" routerLink="/home" routerLinkActive="bg-main text-white">Home</a>
+                <a class="nav-link rounded-pill" routerLink="/cart" routerLinkActive="bg-main text-white">Cart</a>
+            }
             </div>
             <div class="socialmedia d-flex gap-3 align-items-center">
                 <i class="fa-brands fa-facebook"></i>
@@ -23,8 +24,8 @@
                 @if (isLogin) {
                 <a class="nav-link rounded-pill p-2" routerLinkActive="bg-main text-white" (click)="logoutSubmit()">Logout</a>
                 }@else {
-                <a class="nav-link rounded-pill p-2" routerLink="login" routerLinkActive="bg-main text-white">Login</a>
-                <a class="nav-link rounded-pill p-2" routerLink="register"
+                <a class="nav-link rounded-pill p-2" routerLink="/login" routerLinkActive="bg-main text-white">Login</a>
+                <a class="nav-link rounded-pill p-2" routerLink="/register"
                     routerLinkActive="bg-main text-white">Register</a>
                 }
             </div>

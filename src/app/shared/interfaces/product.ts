@@ -1,21 +1,12 @@
-export interface Product {
+export interface Product extends ProductInfo {
   sold: number;
   images: string[];
-  subcategory: Subcategory[];
   ratingsQuantity: number;
-  _id: string;
-  title: string;
   slug: string;
   description: string;
-  quantity: number;
   price: number;
-  imageCover: string;
-  category: Category;
-  brand: Category;
-  ratingsAverage: number;
   createdAt: string;
   updatedAt: string;
-  id: string;
   priceAfterDiscount?: number;
   availableColors?: any[];
 }
@@ -32,4 +23,16 @@ interface Subcategory {
   name: string;
   slug: string;
   category: string;
+}
+
+export interface ProductInfo {
+  subcategory: Subcategory[];
+  _id: string;
+  title: string;
+  quantity: number;
+  imageCover: string;
+  category: Category;
+  brand: Category;
+  ratingsAverage: number;
+  id: string;
 }
