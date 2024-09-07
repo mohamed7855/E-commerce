@@ -5,16 +5,19 @@ import { ProductsService } from '../../../shared/services/products/products.serv
 import { Product } from '../../../shared/interfaces/product';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { SearchProductPipe } from '../../../shared/pipes/search-product.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SearchProductPipe, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   allProducts!: Product[]
+  keywordSearch!: string
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private _ProductsService: ProductsService, private _CartService: CartService, private _ToastrService: ToastrService) { }
   ngOnInit(): void {
