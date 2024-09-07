@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private _HttpClient: HttpClient, private _Router: Router) {
     if (typeof document !== 'undefined') {
       if (localStorage.getItem('userToken')) {
-        this._Router.navigate([localStorage.getItem('currentPage')])
+        // this._Router.navigate([localStorage.getItem('currentPage')])
         this.getUserData()
       }
     }
