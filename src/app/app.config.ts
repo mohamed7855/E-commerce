@@ -8,7 +8,9 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
 import { provideToastr } from 'ngx-toastr';
 import { headerInterceptor } from './shared/interceptors/header/header.interceptor';
 import { errorInterceptor } from './shared/interceptors/errors/error.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { loadingInterceptor } from './shared/interceptors/loading/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, withViewTransitions()), provideClientHydration(),importProvidersFrom(HttpClientModule, RouterModule, BrowserAnimationsModule), provideAnimations(), provideToastr(), provideHttpClient(withInterceptors([headerInterceptor, errorInterceptor]))]
+  providers: [provideRouter(routes, withViewTransitions()), provideClientHydration(),importProvidersFrom(HttpClientModule, RouterModule, BrowserAnimationsModule, NgxSpinnerModule), provideAnimations(), provideToastr(), provideHttpClient(withInterceptors([headerInterceptor, errorInterceptor, loadingInterceptor]))]
 };
