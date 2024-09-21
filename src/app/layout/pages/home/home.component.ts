@@ -7,11 +7,12 @@ import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { SearchProductPipe } from '../../../shared/pipes/search-product.pipe';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, SearchProductPipe, FormsModule],
+  imports: [RouterLink, SearchProductPipe, FormsModule, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

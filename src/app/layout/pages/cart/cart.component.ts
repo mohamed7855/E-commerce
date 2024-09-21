@@ -3,11 +3,12 @@ import { CartService } from '../../../shared/services/cart/cart.service';
 import { CartItem } from '../../../shared/interfaces/cart';
 import { ToastrService } from 'ngx-toastr';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, TranslateModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })

@@ -1,18 +1,20 @@
 import { AuthService } from './../../../shared/services/auth/auth.service';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslationService } from '../../../shared/services/translation/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
   isLogin: boolean = false;
 
-  constructor(private _AuthService: AuthService, private _Router: Router) { 
+  constructor(private _AuthService: AuthService, private _Router: Router, private _TranslationService:TranslationService) { 
     
   }
 
@@ -30,5 +32,10 @@ export class NavbarComponent {
     localStorage.removeItem('userToken');
     this._AuthService.userData.next(null);
     this._Router.navigate(['/login']);
+  }
+
+  changeLang(lang:string){
+    localStorage.setItem("lng",lang)
+    this._TranslationService.setLang()
   }
 }

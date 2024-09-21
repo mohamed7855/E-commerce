@@ -2,11 +2,11 @@
     <div class="flex justify-end gap-2">
         <button [routerLink]="['/order', cartId]"
             class="rounded-md mb-3 before:ease relative h-10 w-40 overflow-hidden border border-green-500 bg-green-500 text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-green-500 hover:before:-translate-x-40 hover:before:animate-ping">
-            <span relative="relative z-10">Make Order</span>
+            <span relative="relative z-10">{{"Make Order"|translate}}</span>
         </button>
         <button (click)="clearCart()"
             class="rounded-md mb-3 before:ease relative h-10 w-40 overflow-hidden border border-red-500 bg-red-500 text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-green-500 hover:before:-translate-x-40 hover:before:animate-ping">
-            <span relative="relative z-10">Clear Cart</span>
+            <span relative="relative z-10">{{"Clear Cart"|translate}}</span>
         </button>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -14,19 +14,19 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-16 py-3">
-                        <span class="sr-only">Image</span>
+                        <span class="sr-only">{{"Image"|translate}}</span>
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Product
+                        {{"Product"|translate}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Qty
+                        {{"Qty"|translate}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Price
+                        {{"Price"|translate}}
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Action
+                        {{"Action"|translate}}
                     </th>
                 </tr>
             </thead>
@@ -67,7 +67,7 @@
                     </td>
                     <td class="px-6 py-4">
                         <a class="font-medium text-red-600 dark:text-red-500 hover:underline cursor-pointer"
-                            (click)="removeProduct(product.product._id)">Remove</a>
+                            (click)="removeProduct(product.product._id)">{{"Remove"|translate}}</a>
                     </td>
                 </tr>
                 }

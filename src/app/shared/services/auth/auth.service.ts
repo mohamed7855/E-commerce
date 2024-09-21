@@ -5,6 +5,7 @@ import { Login, Register } from '../../interfaces/register';
 import { env } from '../../../Base/Environment';
 import { jwtDecode } from "jwt-decode";
 import { Router } from '@angular/router';
+import { TranslationService } from '../translation/translation.service';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class AuthService {
 
   userData: BehaviorSubject<any> = new BehaviorSubject(null);
 
-  constructor(private _HttpClient: HttpClient, private _Router: Router) {
+  constructor(private _HttpClient: HttpClient, private _Router: Router, private _TranslationService:TranslationService) {
     if (typeof document !== 'undefined') {
       if (localStorage.getItem('userToken')) {
         // this._Router.navigate([localStorage.getItem('currentPage')])

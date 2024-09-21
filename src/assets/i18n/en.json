@@ -1,0 +1,19 @@
+{
+  "Hello": "Hiiiiii",
+  "Register": "Register",
+  "Logout":"Logout",
+  "Login":"Login",
+  "Home":"Home",
+  "Cart":"Cart",
+  "Ar":"Ar",
+  "En":"En",
+  "Make Order":"Make Order",
+  "Clear Cart":"Clear Cart",
+  "Image":"Image",
+  "Product":"Product",
+  "Qty":"Qty",
+  "Price":"Price",
+  "Action":"Action",
+  "Remove":"Remove",
+  "Add To Cart":"Add To Cart"
+}
